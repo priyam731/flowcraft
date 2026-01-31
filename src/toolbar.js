@@ -37,7 +37,7 @@ export const PipelineToolbar = () => {
   return (
     <div className="toolbar">
       <div className="toolbar-header">
-        <h1 className="toolbar-title">🚀 VectorShift Pipeline</h1>
+        <h1 className="toolbar-title">🚀 Flowcraft</h1>
         <p className="toolbar-subtitle">Drag nodes to build your pipeline</p>
       </div>
       <div className="toolbar-categories">
