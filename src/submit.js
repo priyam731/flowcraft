@@ -51,11 +51,13 @@ export const SubmitButton = () => {
   const [alertData, setAlertData] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
   const handleSubmit = async () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/pipelines/parse", {
+      const response = await fetch(`${API_URL}/pipelines/parse`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +75,7 @@ export const SubmitButton = () => {
     } catch (error) {
       console.error("Error submitting pipeline:", error);
       alert(
-        "Error: Failed to submit pipeline. Make sure the backend is running."
+        "Error: Failed to submit pipeline. Make sure the backend is running.",
       );
     } finally {
       setIsLoading(false);
