@@ -6,7 +6,7 @@ import { BaseNode, NodeInput, NodeSelect } from "./BaseNode";
 
 export const OutputNode = ({ id, data, selected }) => {
   const [currName, setCurrName] = useState(
-    data?.outputName || id.replace("customOutput-", "output_")
+    data?.outputName || id.replace("customOutput-", "output_"),
   );
   const [outputType, setOutputType] = useState(data?.outputType || "Text");
 

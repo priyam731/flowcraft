@@ -3,6 +3,7 @@
 
 import { useState, useMemo, useRef } from "react";
 import { Handle, Position, NodeResizer } from "reactflow";
+import { useStore } from "../store";
 import styles from "./NodeStyles.module.css";
 
 // Regex to match valid JavaScript variable names inside {{ }}
@@ -11,6 +12,7 @@ const VARIABLE_REGEX = /\{\{\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\}\}/g;
 export const TextNode = ({ id, data, selected }) => {
   const [currText, setCurrText] = useState(data?.text || "");
   const textareaRef = useRef(null);
+  const deleteNode = useStore((state) => state.deleteNode);
 
   // Extract unique variables from the text
   const variables = useMemo(() => {
@@ -40,6 +42,11 @@ export const TextNode = ({ id, data, selected }) => {
     setCurrText(e.target.value);
   };
 
+  const handleDelete = (event) => {
+    event.stopPropagation();
+    deleteNode(id);
+  };
+
   return (
     <div
       className={`${styles.nodeContainer} ${
@@ -54,6 +61,17 @@ export const TextNode = ({ id, data, selected }) => {
         position: "relative",
       }}
     >
+      {/* Delete Button - visible when selected */}
+      {selected && (
+        <button
+          className={styles.deleteButton}
+          onClick={handleDelete}
+          title="Delete node"
+        >
+          ✕
+        </button>
+      )}
+
       {/* Resize Handle - only visible when selected */}
       <NodeResizer
         isVisible={selected}
