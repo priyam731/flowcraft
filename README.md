@@ -32,3 +32,4 @@ Frontend runs at: http://localhost:3000
 **That's it!** Open http://localhost:3000 to use the app.
 
 method used -- Zustand
+..
