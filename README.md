@@ -1,8 +1,8 @@
 # FlowCraft 🚀
 
+![flowcraft](<Untitled design.gif>)
 
-
-Hey there! 👋 Welcome to **FlowCraft**.
+Hey there!  Welcome to **FlowCraft**.
 
 This is a project designed to make building data pipelines visual, intuitive, and maybe even a little fun. Instead of writing spaghetti code to chain functions together, FlowCraft lets you drag, drop, and connect nodes on an infinite canvas.
 
@@ -10,7 +10,7 @@ Whether you're prototyping an LLM chain, building a data filter logic, or just p
 
 
 
-## What's under the hood? 🛠️
+## What's under the hood? 
 
 We're using a modern stack to keep things snappy:
 
@@ -20,7 +20,7 @@ We're using a modern stack to keep things snappy:
 
 
 
-## Features ✨
+## Features 
 
 - **Drag & Drop Canvas**: Add nodes, connect them with edges, move them around. It's super satisfying.
 - **DAG Validation**: The backend automatically checks your pipeline to make sure it's a valid Directed Acyclic Graph (DAG). No infinite loops allowed here! 
@@ -34,11 +34,11 @@ We're using a modern stack to keep things snappy:
 
 
 
-## Getting Started 🏃‍♂️
+## Getting Started 
 
 You'll need two terminals open for this (one for the visuals, one for the brains).
 
-### 1. Fire up the Backend 🐍
+### 1. Fire up the Backend 
 
 The backend handles parsing and validation. 
 
@@ -67,7 +67,7 @@ npm start
 
 Open `http://localhost:3000` in your browser.
 
-## How to Contribute 🤝
+## How to Contribute 
 
 We'd love your help! Whether it's fixing a bug, adding a new node type, or just improving the documentation (meta, I know), contributions are welcome.
 
@@ -91,12 +91,15 @@ Here’s the workflow:
     ```
 8.  **Open a Pull Request**: Go to the original repo and hit "Compare & pull request". Tell us what you did and why it's awesome.
 
+9.  wait for approval
+
 
 ### A few tips for contributors:
 
 - If you're adding a **new node**, make sure to create the component in `src/nodes/` and register it in `src/nodes/index.js` key mappings.
 - Keep the style consistent (we like clean code!).
 - Be nice in the comments. We're all learning here.
+  
 
 ---
 
